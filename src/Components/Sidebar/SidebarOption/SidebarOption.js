@@ -9,7 +9,7 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
     if (id) {
       history.push(`room/${id}`);
     } else {
-      history.push(`/room/${title}`);
+      history.push(`${title}`);
     }
   };
   const addChannel = () => {
