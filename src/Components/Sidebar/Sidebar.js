@@ -14,23 +14,24 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import LoopIcon from "@mui/icons-material/Loop";
-// import db from "../../firebase";
+import db from "../../firebase";
 // import { useStateValue } from "../../StateProvider";
 
 function Sidebar() {
+  const user = {};
   const [channels, setChannels] = useState([]);
   //   const [{ user }] = useStateValue();
 
-  //   useEffect(() => {
-  //     db.collection("rooms").onSnapshot((snapshot) => {
-  //       setChannels(
-  //         snapshot.docs.map((doc) => ({
-  //           id: doc.id,
-  //           name: doc.data().name,
-  //         }))
-  //       );
-  //     });
-  //   }, []);
+  useEffect(() => {
+    db.collection("rooms").onSnapshot((snapshot) => {
+      setChannels(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().name,
+        }))
+      );
+    });
+  }, []);
 
   return (
     <div className="sidebar">
@@ -58,10 +59,10 @@ function Sidebar() {
       <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
 
       {/* Connect to db and list all the channels*/}
-      {/* SidebarOptionn */}
-      {/* {channels.map((channel) => (
+      {/* SidebarOption */}
+      {channels.map((channel) => (
         <SidebarOption title={channel.name} id={channel.id} />
-      ))} */}
+      ))}
     </div>
   );
 }
