@@ -1,0 +1,18 @@
+body {
+  --slack-color: #3f0f40;
+  overflow: hidden;
+}
+
+.app-body {
+  display: flex;
+  height: 100vh;
+}
+
+.information {
+  margin: 1rem 0.625rem;
+}
+
+.information > p {
+  margin-top: 0.625rem;
+  font-size: 1rem;
+}
