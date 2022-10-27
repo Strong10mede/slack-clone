@@ -9,7 +9,9 @@ function Chat() {
     <div className="chat">
       <div className="chat__header">
         <div className="chat__headerLeft">
-          <h4 className="chat__channelName">{roomId}</h4>
+          <h4 className="chat__channelName">
+            #{roomId} <StarBorderOutlineIcon />{" "}
+          </h4>
         </div>
         <div className="chat__headerRight">
           <p>
