@@ -11,16 +11,16 @@
   background-color: #340e36;
 }
 
-.sidebarOption-icon {
+.sidebarOption__icon {
   padding: 10px;
   font-size: 15px;
 }
 
-.sidebarOption-channel {
+.sidebarOption__channel {
   padding: 10px 0;
 }
 
-.sidebarOption-hash {
+.sidebarOption__hash {
   padding: 10px;
 }
 
