@@ -15,12 +15,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import LoopIcon from "@mui/icons-material/Loop";
 import db from "../../firebase";
-// import { useStateValue } from "../../StateProvider";
+import { useStateValue } from "../../StateProvider";
 
 function Sidebar() {
-  const user = {};
   const [channels, setChannels] = useState([]);
-  //   const [{ user }] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) => {
