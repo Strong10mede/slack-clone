@@ -9,7 +9,7 @@ import ChatInput from "./ChatInput/ChatInput";
 function Chat() {
   const { roomId } = useParams();
   const [roomDetails, setRoomsDetails] = useState(null);
-  const [roomMessages, setRooomMessages] = useState([]);
+  const [roomMessages, setRoomMessages] = useState([]);
 
   useEffect(() => {
     if (roomId) {
@@ -22,7 +22,7 @@ function Chat() {
       .collection("messages")
       .orderBy("timestamp", "asc")
       .onSnapshot((snapshot) =>
-        setRooomMessages(snapshot.docs.map((doc) => doc.data()))
+        setRoomMessages(snapshot.docs.map((doc) => doc.data()))
       );
   }, [roomId]);
   return (
